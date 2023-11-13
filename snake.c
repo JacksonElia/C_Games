@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <windows.h>
+#include "snake.h"
 
 int width;
 int height;
