@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <windows.h>
 #include "snake.h"
+#include <stdbool.h>
+#include <stdio.h>
+#include <windows.h>
 
 int width;
 int height;
@@ -19,9 +19,7 @@ void draw() {
     system("cls");
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            if (i == 0 || i == width - 1
-                || j == 0
-                || j == height - 1) {
+            if (i == 0 || i == width - 1 || j == 0 || j == height - 1) {
                 printf("#");
             }
         }
