@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <windows.h>
 
+
 int width;
 int height;
 int delay_seconds;
