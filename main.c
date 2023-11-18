@@ -6,18 +6,17 @@
 
 
 int main() {
-    hideCursor();
-
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    int columns, rows;
+    hideCursor();
+    int rows, columns;
 
-    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-    columns = csbi.srWindow.Right - csbi.srWindow.Left + 1;
-    rows = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+    getTerminalSize(csbi, &rows, &columns);
 
-    printf("columns: %d\n", columns);
-    printf("rows: %d\n", rows);
+    printf("%d", rows);
 
+//    for (;;) {
+//
+//    }
 
 //    snake_setup(50, 30, 10);
 //
