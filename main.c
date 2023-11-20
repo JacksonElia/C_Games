@@ -9,18 +9,11 @@ int main() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     hideCursor();
     int rows, columns;
-
     getTerminalSize(csbi, &rows, &columns);
 
-    printf("%d", rows);
+    snake_setup(columns, rows, 10);
 
-//    for (;;) {
-//
-//    }
-
-//    snake_setup(50, 30, 10);
-//
-//    snake_main_loop();
+    snake_main_loop();
 
     return 0;
 }

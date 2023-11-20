@@ -17,7 +17,7 @@ void snake_setup(int _width, int _height, int _delay_seconds) {
 }
 
 void draw() {
-    system("cls");
+//    system("cls");
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             if (i == 0 || i == width - 1 || j == 0 || j == height - 1) {
