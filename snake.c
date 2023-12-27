@@ -1,4 +1,5 @@
 #include "snake.h"
+#include <string.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <windows.h>
@@ -17,17 +18,19 @@ void snake_setup(int _width, int _height, int _delay_milliseconds) {
 }
 
 void draw() {
-//    system("cls");
+    char frame[height * (width + 1)]; // height lines, each with width characters and a newline
+    frame[0] = '\0';
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
-                printf("#");
+                strncat(frame, "#", 1);
             } else {
-                printf(" ");
+                strncat(frame, " ", 1);
             }
         }
-        printf("\n");
+        strncat(frame, "\n", 1);
     }
+    printf("%s", frame);
 }
 
 void snake_main_loop() {
