@@ -9,7 +9,8 @@ void hideCursor() {
     SetConsoleCursorInfo(consoleHandle, &info);
 }
 
-void getTerminalSize(CONSOLE_SCREEN_BUFFER_INFO csbi, int *rows, int *columns) {
+void getTerminalSize(int *rows, int *columns) {
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
     *rows = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
     *columns = csbi.srWindow.Right - csbi.srWindow.Left + 1;

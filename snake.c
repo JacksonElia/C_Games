@@ -6,13 +6,13 @@
 
 int width;
 int height;
-int delay_seconds;
+int delay_milliseconds;
 bool game_over;
 
-void snake_setup(int _width, int _height, int _delay_seconds) {
+void snake_setup(int _width, int _height, int _delay_milliseconds) {
     width = _width;
     height = _height;
-    delay_seconds = _delay_seconds;
+    delay_milliseconds = _delay_milliseconds;
     game_over = false;
 }
 
@@ -33,6 +33,6 @@ void draw() {
 void snake_main_loop() {
     while (!game_over) {
         draw();
-        Sleep(delay_seconds);
+        Sleep(delay_milliseconds);
     }
 }
