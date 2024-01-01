@@ -37,7 +37,7 @@ void snake_main_loop() {
         draw();
         Sleep(delay_milliseconds);
         char ch;
-        if (kbhit) {
+        if (kbhit()) {
             // fetch typed character into ch
             ch = getch();
             if ((int) ch == 27)
