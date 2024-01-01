@@ -1,6 +1,7 @@
 #include "snake.h"
 #include <string.h>
 #include <stdbool.h>
+#include <conio.h>
 #include <stdio.h>
 #include <windows.h>
 
@@ -8,13 +9,11 @@
 int width;
 int height;
 int delay_milliseconds;
-bool game_over;
 
 void snake_setup(int _width, int _height, int _delay_milliseconds) {
     width = _width;
     height = _height;
     delay_milliseconds = _delay_milliseconds;
-    game_over = false;
 }
 
 void draw() {
@@ -34,8 +33,16 @@ void draw() {
 }
 
 void snake_main_loop() {
-    while (!game_over) {
+    while (true) {
         draw();
         Sleep(delay_milliseconds);
+        char ch;
+        if (kbhit) {
+            // fetch typed character into ch
+            ch = getch();
+            if ((int) ch == 27)
+                // when esc button is pressed, then it will exit from loop
+                break;
+        }
     }
 }
