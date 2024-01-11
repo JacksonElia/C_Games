@@ -14,8 +14,7 @@ int snake_y;
 
 void snake_setup(int _width, int _height, int _delay_milliseconds) {
     width = _width;
-//    height = _height;
-    height = 10;
+    height = _height;
     delay_milliseconds = _delay_milliseconds;
 }
 
