@@ -14,7 +14,8 @@ int snake_y;
 
 void snake_setup(int _width, int _height, int _delay_milliseconds) {
     width = _width;
-    height = _height;
+//    height = _height;
+    height = 10;
     delay_milliseconds = _delay_milliseconds;
 }
 
@@ -23,14 +24,12 @@ void draw() {
     frame[0] = '\0';
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
+            if (j == snake_x && i == snake_y) {
+                strncat(frame, "*", 1);
+            } else if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
                 strncat(frame, "#", 1);
             } else {
                 strncat(frame, " ", 1);
-            }
-            // For now, I'm treating the snake as only 1 long
-            if (j == snake_x && i == snake_y) {
-                frame[sizeof(frame) - 1] = '*';
             }
         }
         strncat(frame, "\n", 1);
